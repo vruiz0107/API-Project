@@ -36,10 +36,20 @@ const validateSpot = [
         .withMessage('Name must be lesss thn 50 characters').bail()
         .isLength({ max: 51 })
         .withMessage('Name must be less than 50 characters'),
+    check('desription')
+        .exists({ checkFalsy: true })
+        .withMessage('Desription is required'),
 
+    check('price')
+        .exists({ checkFalsy: true })
+        .withMessage('Price per day is required').bail()
+        .isInt({ checkFalsy: true })
+        .withMessage('Price per day must be a number'),
+
+    handleValidationErrors,
     // not done:
     // check('name')
     //     .exists({ checkFalsy: true })
     //     .withMessage('Name must be less than 50 characters'),
     
-]
+];
