@@ -31,6 +31,11 @@ const validateSpot = [
         .withMessage('Longitude is not valid').bail()
         .isNumeric({ checkFalsy: true })
         .withMessage('Longitude is not valid'),
+    check('name')
+        .exists({ checkFalsy: true })
+        .withMessage('Name must be lesss thn 50 characters').bail()
+        .isLength({ max: 51 })
+        .withMessage('Name must be less than 50 characters'),
 
     // not done:
     // check('name')
