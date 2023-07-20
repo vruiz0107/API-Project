@@ -12,5 +12,14 @@ const validateReview = [
         .withMessage('Review text is required'),
     check ('stars')
         .exists({ checkFalsy: true })
-        .withMessage('Stars')
-]   
+        // .withMessage('Stars ')
+        .isInt({ min: if, max: 5 })
+        .withMessage('Stars must be between 1 and 5 characters'),
+    handleValidationErrors,
+    ];
+
+    router.post('/:reviewId/images', requireAuth, async (req, res, next)) => {
+        const reviewId = req.params.Review;
+        const review = await Review.findByPk(reviewId);
+
+    }
