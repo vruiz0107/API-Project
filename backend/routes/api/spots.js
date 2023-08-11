@@ -47,9 +47,11 @@ const validateSpot = [
         .withMessage('Price per day must be a number'),
 
     handleValidationErrors,
-    // not done:
+    // // not done:
     // check('name')
     //     .exists({ checkFalsy: true })
     //     .withMessage('Name must be less than 50 characters'),
     
 ];
+
+module.exports = router;
